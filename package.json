@@ -135,6 +135,7 @@
   },
   "overrides": {
     "yaml": ">=2.8.3",
-    "fast-xml-parser": ">=5.7.0"
+    "fast-xml-parser": ">=5.7.0",
+    "qs": ">=6.15.2"
   }
 }
