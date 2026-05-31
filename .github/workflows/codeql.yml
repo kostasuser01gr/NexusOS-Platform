@@ -53,3 +53,7 @@ jobs:
 
       - name: Analyze
         uses: github/codeql-action/analyze@c6f931105cb2c34c8f901cc885ba1e2e259cf745 # v4
+        with:
+          # This repository does not have paid GitHub Advanced Security enabled.
+          # Keep local CodeQL analysis green without attempting SARIF upload.
+          upload: false
