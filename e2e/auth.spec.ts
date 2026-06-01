@@ -12,10 +12,13 @@ test.describe("Authentication flows", () => {
     expect(body.status).toBe("ok");
   });
 
-  test("unauthenticated root redirects to /auth", async ({ page }) => {
+  test("unauthenticated root shows public portfolio overview", async ({
+    page,
+  }) => {
     await page.goto("/");
-    await expect(page).toHaveURL(/\/auth/);
-    await expect(page.getByTestId("text-app-title")).toBeVisible();
+    await expect(page).toHaveURL("/");
+    await expect(page.getByText("AdaptiveAI Business Suite")).toBeVisible();
+    await expect(page.getByText("Open protected workspace")).toBeVisible();
   });
 
   test("register a new user and reach dashboard", async ({ page }) => {
@@ -37,7 +40,7 @@ test.describe("Authentication flows", () => {
     expect(registerRes.status()).toBe(200);
 
     // Should land on dashboard — allow enough time for React Query to refetch /api/auth/me
-    await expect(page).toHaveURL("/", { timeout: 10000 });
+    await expect(page).toHaveURL("/dashboard", { timeout: 10000 });
     await expect(page.getByTestId("text-dashboard-title")).toBeVisible();
   });
 
@@ -66,7 +69,7 @@ test.describe("Authentication flows", () => {
     ]);
     expect(loginRes.status()).toBe(200);
 
-    await expect(page).toHaveURL("/", { timeout: 10000 });
+    await expect(page).toHaveURL("/dashboard", { timeout: 10000 });
     await expect(page.getByTestId("text-dashboard-title")).toBeVisible();
   });
 
@@ -105,7 +108,7 @@ test.describe("Authentication flows", () => {
     expect(meRes.ok()).toBeTruthy();
 
     // Navigate directly — session cookie shared with browser context
-    await page.goto("/");
+    await page.goto("/dashboard");
     await expect(page.getByTestId("text-dashboard-title")).toBeVisible({
       timeout: 10000,
     });

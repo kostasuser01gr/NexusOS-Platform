@@ -20,7 +20,7 @@ async function registerAndLogin(page: import("@playwright/test").Page) {
   ]);
 
   expect(registerResponse.ok()).toBeTruthy();
-  await expect(page).toHaveURL("/", { timeout: 10000 });
+  await expect(page).toHaveURL("/dashboard", { timeout: 10000 });
   await expect(page.getByTestId("text-dashboard-title")).toBeVisible({
     timeout: 10000,
   });
@@ -356,7 +356,7 @@ test.describe("Module journeys", () => {
     page,
   }) => {
     await registerAndLogin(page);
-    await page.goto("/", { waitUntil: "domcontentloaded" });
+    await page.goto("/dashboard", { waitUntil: "domcontentloaded" });
 
     await expect(page.getByTestId("text-dashboard-title")).toBeVisible();
 

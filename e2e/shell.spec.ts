@@ -19,7 +19,7 @@ test.describe("Shell experience", () => {
     page,
   }) => {
     await registerAndLogin(page);
-    await page.goto("/");
+    await page.goto("/dashboard");
 
     await expect(page.locator('link[rel="manifest"]')).toHaveAttribute(
       "href",
@@ -81,7 +81,7 @@ test.describe("Shell experience", () => {
     test.skip(!isProductionShellRun, "Requires the production server path");
 
     await registerAndLogin(page);
-    await page.goto("/");
+    await page.goto("/dashboard");
 
     await expect
       .poll(async () => {
@@ -144,7 +144,7 @@ test.describe("Shell experience", () => {
     });
     expect(bookingResponse.ok()).toBeTruthy();
 
-    await page.goto("/");
+    await page.goto("/dashboard");
     await expect(page.getByTestId("badge-notification-count")).toContainText(
       "1",
     );
@@ -213,7 +213,7 @@ test.describe("Shell experience", () => {
     });
     expect(taskResponse.ok()).toBeTruthy();
 
-    await page.goto("/");
+    await page.goto("/dashboard");
 
     await expect(page.getByTestId("shell-control-card")).toBeVisible();
     await expect(page.getByTestId("shell-posture-badge")).toBeVisible();

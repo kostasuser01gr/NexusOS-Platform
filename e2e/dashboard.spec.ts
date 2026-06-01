@@ -22,7 +22,7 @@ test.describe("Dashboard", () => {
     page,
   }) => {
     await registerAndLogin(page);
-    await page.goto("/");
+    await page.goto("/dashboard");
 
     await expect(page.getByTestId("text-dashboard-title")).toBeVisible({
       timeout: 10000,
@@ -37,7 +37,7 @@ test.describe("Dashboard", () => {
     page,
   }) => {
     await registerAndLogin(page);
-    await page.goto("/");
+    await page.goto("/dashboard");
 
     await expect(page.getByTestId("text-dashboard-title")).toBeVisible({
       timeout: 10000,
@@ -49,8 +49,8 @@ test.describe("Dashboard", () => {
     )
       .toBeVisible({ timeout: 5000 })
       .catch(() => {
-        // Some implementations open a sidebar/drawer — just verify URL stays at /
-        expect(page.url()).toContain("/");
+        // Some implementations open a sidebar/drawer — just verify URL stays in the dashboard.
+        expect(page.url()).toContain("/dashboard");
       });
   });
 
