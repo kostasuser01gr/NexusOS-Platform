@@ -124,7 +124,7 @@ export function buildShellSignals({
         unread > 0
           ? `${unread} unread ${pluralize("alert", unread)}`
           : "Notification stack is quiet",
-      href: "/",
+      href: "/dashboard",
       tone: unread > 0 ? "attention" : "stable",
     },
     {

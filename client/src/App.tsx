@@ -11,6 +11,7 @@ import AppLayout from "./components/layout/AppLayout";
 // Keep auth and dashboard as static imports (primary entry points)
 import AuthPage from "./pages/auth/AuthPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
+import PublicOverviewPage from "./pages/public/PublicOverviewPage";
 import NotFound from "@/pages/not-found";
 
 // Lazy-load secondary pages
@@ -62,6 +63,9 @@ function Router() {
           <AuthPage />
         </Route>
         <Route path="/">
+          <PublicOverviewPage />
+        </Route>
+        <Route path="/dashboard">
           <ProtectedRoute component={DashboardPage} />
         </Route>
         <Route path="/today">

@@ -1,5 +1,5 @@
 export type PostAuthRoute =
-  | "/"
+  | "/dashboard"
   | "/today"
   | "/fleet"
   | "/bookings"
@@ -40,7 +40,7 @@ export type AppPreferencesPatch = {
 
 export const defaultPreferences: AppPreferences = {
   workspace: {
-    postAuthRoute: "/",
+    postAuthRoute: "/dashboard",
   },
   shell: {
     density: "comfortable",
@@ -68,7 +68,7 @@ export const postAuthRouteOptions: Array<{
     description: "Open the live operator board with the next actions and watchlists.",
   },
   {
-    value: "/",
+    value: "/dashboard",
     label: "Dashboard",
     description: "Open the adaptive command center after sign-in.",
   },

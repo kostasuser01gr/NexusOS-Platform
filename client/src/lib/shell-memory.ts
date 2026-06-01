@@ -20,7 +20,7 @@ export interface ShellMemoryState {
 }
 
 export const supportedShellRoutes = new Set<string>([
-  "/",
+  "/dashboard",
   "/today",
   "/fleet",
   "/bookings",
@@ -43,7 +43,7 @@ const MAX_RECENTS = 6;
 
 const routeDescriptions: Record<string, string> = {
   "/today": "Return to the live operator board and active watchlists.",
-  "/": "Open the adaptive workspace dashboard.",
+  "/dashboard": "Open the adaptive workspace dashboard.",
   "/fleet": "Inspect asset availability, utilization, and condition.",
   "/bookings": "Review the live booking and event pipeline.",
   "/customers": "Open customer operations and intelligence.",
@@ -66,7 +66,7 @@ function uniquePaths(paths: string[], allowedPaths: Set<string>): string[] {
 }
 
 export function getShellRouteKey(path: string): string {
-  return path === "/" ? "dashboard" : path.replace(/^\//, "").replace(/\//g, "-");
+  return path === "/dashboard" ? "dashboard" : path.replace(/^\//, "").replace(/\//g, "-");
 }
 
 export function buildShellRouteCatalog(

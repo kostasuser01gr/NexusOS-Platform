@@ -22,7 +22,7 @@ export const ontologies: Record<string, Ontology> = {
     eventName: "Booking",
     navigation: [
       { icon: "Sparkles", label: "Today", path: "/today", always: true },
-      { icon: "LayoutDashboard", label: "Dashboard", path: "/", always: true },
+      { icon: "LayoutDashboard", label: "Dashboard", path: "/dashboard", always: true },
       { icon: "CarFront", label: "Fleet", path: "/fleet" },
       { icon: "Calendar", label: "Bookings", path: "/bookings" },
       { icon: "Users", label: "Customers", path: "/customers" },
@@ -46,7 +46,7 @@ export const ontologies: Record<string, Ontology> = {
     eventName: "Event",
     navigation: [
       { icon: "Sparkles", label: "Today", path: "/today", always: true },
-      { icon: "LayoutDashboard", label: "Overview", path: "/", always: true },
+      { icon: "LayoutDashboard", label: "Overview", path: "/dashboard", always: true },
       {
         icon: "CheckSquare",
         label: "To-Do List",
@@ -72,7 +72,7 @@ export const ontologies: Record<string, Ontology> = {
     eventName: "Task",
     navigation: [
       { icon: "Sparkles", label: "Today", path: "/today", always: true },
-      { icon: "LayoutDashboard", label: "Dashboard", path: "/", always: true },
+      { icon: "LayoutDashboard", label: "Dashboard", path: "/dashboard", always: true },
       { icon: "Briefcase", label: "Projects", path: "/projects" },
       { icon: "Users", label: "CRM", path: "/customers" },
       { icon: "CheckSquare", label: "Tasks", path: "/tasks", always: true },

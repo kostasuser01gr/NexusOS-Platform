@@ -168,7 +168,7 @@ export default function SettingsPage() {
 
   function openDashboardStudio() {
     window.sessionStorage.setItem("open-dashboard-studio", "1");
-    setLocation("/");
+    setLocation("/dashboard");
   }
 
   return (

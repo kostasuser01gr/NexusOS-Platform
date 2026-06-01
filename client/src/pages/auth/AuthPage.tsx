@@ -175,7 +175,7 @@ export default function AuthPage() {
           variant="outline"
           onClick={() => {
             continueAsGuest();
-            setLocation("/");
+            setLocation("/dashboard");
           }}
           className="w-full py-5 border-white/10 hover:bg-white/5 text-muted-foreground hover:text-foreground font-medium rounded-xl transition-all group"
           data-testid="button-guest"

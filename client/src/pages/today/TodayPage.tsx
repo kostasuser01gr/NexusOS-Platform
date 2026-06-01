@@ -160,7 +160,7 @@ export default function TodayPage() {
     {
       label: "Workspace dashboard",
       description: "Switch back to the module grid and live widgets.",
-      href: "/",
+      href: "/dashboard",
       icon: LayoutDashboard,
     },
   ];

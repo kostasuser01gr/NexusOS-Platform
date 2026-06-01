@@ -147,7 +147,7 @@ export default function CommandBar() {
       description: "Go to main dashboard",
       icon: <LayoutDashboard className="h-4 w-4" />,
       action: () => {
-        setLocation("/");
+        setLocation("/dashboard");
         setCommandBarOpen(false);
       },
       category: "Navigation",

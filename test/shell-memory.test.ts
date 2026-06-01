@@ -19,7 +19,7 @@ test("buildShellRouteCatalog excludes unsupported ontology routes", () => {
   assert.equal(paths.includes("/projects"), false);
   assert.equal(paths.includes("/today"), true);
   assert.equal(
-    personalRoutes.find((route) => route.path === "/")?.label,
+    personalRoutes.find((route) => route.path === "/dashboard")?.label,
     "Overview",
   );
 });
@@ -40,7 +40,7 @@ test("normalizeShellMemory filters unknown paths and de-duplicates items", () =>
 });
 
 test("recordRecentPath keeps the newest route first and caps the stack", () => {
-  const state = ["/", "/tasks", "/notes", "/bookings", "/fleet", "/financial"]
+  const state = ["/dashboard", "/tasks", "/notes", "/bookings", "/fleet", "/financial"]
     .reduce(
       (memory, path) => recordRecentPath(memory, path, supportedShellRoutes),
       normalizeShellMemory(null, supportedShellRoutes),
@@ -68,7 +68,7 @@ test("toggleFavoritePath adds then removes a valid route", () => {
 });
 
 test("getShellRouteKey returns stable identifiers for route test ids", () => {
-  assert.equal(getShellRouteKey("/"), "dashboard");
+  assert.equal(getShellRouteKey("/dashboard"), "dashboard");
   assert.equal(getShellRouteKey("/nexus-ultra"), "nexus-ultra");
   assert.equal(getShellRouteKey("/today"), "today");
   assert.equal(
