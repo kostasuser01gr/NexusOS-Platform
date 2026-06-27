@@ -129,3 +129,19 @@ vercel deploy --prod
 ## Vision
 
 The software should adapt to the operator rather than forcing the operator to adapt to the software. Nexus OS provides a unified shell, a flexible data model, and an AI layer that can assist without obscuring the underlying business state.
+
+---
+
+## Author
+
+**Konstantinos Foskolakis**
+Full-stack engineer — Heraklion, Crete, Greece
+[github.com/kostasuser01gr](https://github.com/kostasuser01gr)
+
+---
+
+## Portfolio Positioning
+
+This project demonstrates full-stack product ownership across a multi-surface system: React/Vite web frontend, Express/TypeScript backend, PostgreSQL via Drizzle ORM, and an Expo mobile client sharing the same domain model. The architecture reflects real operational constraints — multi-mode workspaces, role-aware sessions, AI-assisted module suggestions, and a mobile client that mirrors the web data vocabulary. The security posture includes npm audit, Trivy, Gitleaks, and CodeQL in CI. The Playwright E2E suite validates the public portfolio overview route independently of auth state. This is production-style architecture applied to a portfolio-grade MVP.
+
+*Built as a portfolio-grade multi-platform operations suite. Estimated implementation effort for the current public version: 5–8 focused development days.*
